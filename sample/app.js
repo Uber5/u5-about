@@ -15,6 +15,7 @@ const App = () => (
     />
     <h2>Error Logging</h2>
     <LoggedErrors />
+    <button onClick={() => console.log(window.notThere.boom)}>Trigger error</button>
   </div>
 )
 
