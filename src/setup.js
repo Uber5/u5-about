@@ -16,7 +16,7 @@ const installErrorListener = w => {
   })
 }
 
-if (window || !window.localStorage) {
+if (window && window.localStorage) {
   installErrorListener(window)
 } else {
   console.log('u5-about, no "window" global found, or no localStorage. Oops.')
