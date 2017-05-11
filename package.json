@@ -1,0 +1,49 @@
+{
+  "name": "u5-about",
+  "version": "0.0.1",
+  "description": "Generic 'about page' support, experimental, probably with version, debug and error information",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "babel src --out-dir dist --source-maps",
+    "build:watch": "npm run build -- --watch",
+    "prepublish": "npm run clean && npm run build",
+    "test": "echo \"no tests yet\" && exit 0",
+    "clean": "rimraf dist",
+    "sample": "webpack-dev-server --config ./sample/webpack.config.js"
+
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Uber5/u5-about.git"
+  },
+  "keywords": [
+    "U5",
+    "Uber5",
+    "error",
+    "handling",
+    "about",
+    "page"
+  ],
+  "author": "Chris Oloff <chris@uber5.com> (http://about.uber5.com/)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Uber5/u5-about/issues"
+  },
+  "homepage": "https://github.com/Uber5/u5-about#readme",
+  "peerDependencies": {
+    "react": "^14 || ^15"
+  },
+  "devDependencies": {
+    "babel-cli": "6.24.0",
+    "babel-core": "6.24.0",
+    "babel-loader": "6.4.1",
+    "babel-preset-es2015": "6.24.0",
+    "babel-preset-react": "6.23.0",
+    "babel-preset-stage-2": "6.22.0",
+    "react-dom": "15.4.2",
+    "rimraf": "2.6.1",
+    "webpack": "1.14.0",
+    "webpack-dev-server": "1.16.2"
+  }
+
+}
