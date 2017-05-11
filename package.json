@@ -10,7 +10,6 @@
     "test": "echo \"no tests yet\" && exit 0",
     "clean": "rimraf dist",
     "sample": "webpack-dev-server --config ./sample/webpack.config.js"
-
   },
   "repository": {
     "type": "git",
@@ -43,8 +42,8 @@
     "react-dom": "15.4.2",
     "react": "15.4.2",
     "rimraf": "2.6.1",
-    "webpack": "1.14.0",
-    "webpack-dev-server": "1.16.2"
+    "webpack": "2.4.1",
+    "webpack-dev-server": "2.4.2"
   }
 
 }
