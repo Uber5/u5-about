@@ -3,8 +3,8 @@ import { render } from 'react-dom'
 
 import { About, LoggedErrors } from '../src'
 
-const App = () => {
-  return (<div>
+const App = () => (
+  <div>
     <h1>About</h1>
     <About
       details={{
@@ -15,7 +15,7 @@ const App = () => {
     />
     <h2>Error Logging</h2>
     <LoggedErrors />
-  </div>)
-}
+  </div>
+)
 
 render(<App />, document.getElementById('app'))
