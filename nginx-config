@@ -3,7 +3,7 @@ server {
   server_name  localhost;
   location /u5-about {
     root   /usr/share/nginx/html;
-    location setup.js {
+    location /u5-about/setup.js {
       add_header Access-Control-Allow-Origin *;
     }
   }
