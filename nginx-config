@@ -3,7 +3,7 @@ server {
   server_name  localhost;
   location / {
     root   /usr/share/nginx/html;
-    rewrite ^/u5-about/(.*) $1;
+    rewrite ^/u5-about/(.*) /$1;
     location /setup.js {
       add_header Access-Control-Allow-Origin *;
     }
