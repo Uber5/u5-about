@@ -14,14 +14,18 @@ export default () => {
       at = "" + at
     }
 
-    return <li key={index}>{err.message}, {at}</li>
+    return <li key={index}>
+      {err.message}, {at}, Stack:
+      <br/>
+      <pre>{err.stack}</pre>
+    </li>
   }
 
   return errors.length
   ?
     <ul>
       {
-        errors.map(renderError)
+        errors.sort((a, b) => b.at - a.at).map(renderError)
       }
     </ul>
   : <div>No errors recorded.</div>
