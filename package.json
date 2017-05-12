@@ -1,6 +1,6 @@
 {
   "name": "u5-about",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Generic 'about page' support, experimental, probably with version, debug and error information",
   "main": "dist/index.js",
   "scripts": {
