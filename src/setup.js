@@ -19,5 +19,5 @@ const installErrorListener = w => {
 if (window && window.localStorage) {
   installErrorListener(window)
 } else {
-  console.log('u5-about, no "window" global found, or no localStorage. Oops.')
+  alert('u5-about, no "window" global found, or no localStorage. Please let us know on info@uber5.com')
 }
