@@ -1,0 +1,41 @@
+image: node:6
+
+stages:
+  - build-app
+  - build-docker
+  - deploy
+
+build-app:
+  stage: build-app
+  script:
+    - npm install
+    - NODE_ENV=production npm run build
+  cache:
+    paths:
+      - node_modules/
+  artifacts:
+    paths:
+      - dist/
+    expire_in: 1 hour
+
+build-docker:
+  only:
+    - master@uber5-dev/u5-about
+  image: docker:1.12
+  services:
+    - docker:1.12-dind
+  stage: build-docker
+  dependencies:
+    - build-app
+  script:
+    - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN gitlab.uber5.com:4567
+    - docker build -t gitlab.uber5.com:4567/uber5-dev/u5-about:$CI_BUILD_REF_NAME .
+    - docker push gitlab.uber5.com:4567/uber5-dev/u5-about:$CI_BUILD_REF_NAME
+
+deploy:
+  stage: deploy
+  only:
+    - master@uber5-dev/u5-about
+  script:
+    - npm install gitlab2rancher-deploy
+    - node scripts/deploy.js
