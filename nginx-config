@@ -1,9 +1,10 @@
 server {
   listen       80;
   server_name  localhost;
-  location /u5-about {
+  location / {
     root   /usr/share/nginx/html;
-    location /u5-about/setup.js {
+    rewrite ^/u5-about/(.*) $1;
+    location /setup.js {
       add_header Access-Control-Allow-Origin *;
     }
   }
